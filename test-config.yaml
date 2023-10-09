@@ -1,0 +1,24 @@
+app:
+  baseUrl: 'x'
+backend:
+  listen: 5000
+  baseUrl: 'x'
+  database:
+    client: better-sqlite3
+    connection: ':memory:'
+techdocs:
+  builder: local
+
+integrations:
+  azure:
+    - host: test
+      credentials:
+        - clientSecret: azure-client-secret
+    - host: dev.azure.com
+      credentials:
+        - organizations:
+            - my-org
+          personalAccessToken: azure-pat
+        - organizations:
+            - my-other-org
+          clientSecret: azure-client-secret
